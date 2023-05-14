@@ -1,9 +1,17 @@
 /* To-do: Make background nature pattern */
 body {
-    background-color: #AEC3B0;
+    background-image: url("leaf.png");
     color: black;
     display: grid;
     place-content: center;
+  }
+
+  .container {
+    background: rgba(174, 195, 176, 0.8);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   
   h1, h2, p {
