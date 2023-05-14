@@ -4,10 +4,14 @@ import { useState } from 'react';
 
 const api_key = import.meta.env.VITE_OPENAI_KEY;
 
+
+// Display image once uploaded
+
 const Main = () => {
 
     const [prompt, setPrompt] = useState("Plastic Water Bottle, Smartphone, Headphones, BMW Car");
     const [answer, setAnswer] = useState("No answer yet...");
+    const [image, setImage] = useState(null);
 
     async function handleGPTRequest() {
         console.log("Calling OpenAI API");
@@ -44,6 +48,10 @@ const Main = () => {
         handleGPTRequest();
     }
 
+    const handleImageChange = (event) => {
+        setImage(event.target.files[0]);
+    }
+
     const formRef = React.createRef();
 
     return (
@@ -57,8 +65,17 @@ const Main = () => {
                 <div className="file">
                     <span>Upload your image</span>
                     <button type="button"></button>
-                    <input type="file" id="img" name="img" accept="image/*" />
+                    <input type="file" id="img" name="img" accept="image/*" onChange={handleImageChange} />
                 </div>
+                <br />
+                <p>{image ? "Uploaded image: " : null}</p>
+                {image && (
+                    <img
+                        className="uploaded-image"
+                        src={URL.createObjectURL(image)}
+                        alt="Uploaded"
+                    />
+                )}
                 <br />
                 <textarea className="textarea1" value={prompt} readOnly onChange={handleTextboxChange} />
                 <textarea className="textarea2" value={answer} readOnly />

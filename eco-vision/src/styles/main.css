@@ -1,3 +1,4 @@
+/* To-do: Make background nature pattern */
 body {
     background-color: #AEC3B0;
     color: black;
@@ -5,7 +6,7 @@ body {
     place-content: center;
   }
   
-  h1, h2 {
+  h1, h2, p {
     margin: 0;
     text-align: center;
   }
@@ -102,6 +103,14 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .uploaded-image {
+    width: 100px;
     display: flex;
     margin: 0 auto;
     justify-content: center;
