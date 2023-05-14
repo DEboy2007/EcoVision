@@ -1,0 +1,110 @@
+body {
+    background-color: #AEC3B0;
+    color: black;
+    display: grid;
+    place-content: center;
+  }
+  
+  h1, h2 {
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Style for the input file element */
+  .file {
+    position: relative;
+    width: 30em;
+    height: 4em;
+    background-color: #2E86AB;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: auto;
+  }
+  
+  .file button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 3em;
+    height: 3em;
+    background-color: #FC7A57;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the upload icon */
+  .file button::before {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 2em;
+    background-image: url(upload.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .file span {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  
+  /* Hide the default file input */
+  .file input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  textarea {
+    resize: none;
+    height: 50vh;
+    width: 30vw;
+    font-size: 1.5rem;
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1em;
+    background-color: #EFF6E0;
+    color: #2F2F2F;
+  }
+  
+  .textarea1 {
+    margin-right: 2vw;
+  }
+  
+  .textarea2 {
+    margin-left: 2vw;
+  }
+
+  input[type=submit] {
+    background-color: #2F2F2F;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
