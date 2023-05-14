@@ -56,7 +56,7 @@ const Main = () => {
         <div className="container">
             <div className='header'>
                 <h1>EcoVision</h1>
-                <h2>Repurpose and Substitute</h2>
+                <h2>Repurpose and Reuse</h2>
             </div>
             <br /><br />
             <form ref={formRef} onSubmit={handleButtonClick}>
