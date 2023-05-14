@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/main.css';
 import { useState } from 'react';
 
+const api_key = import.meta.env.VITE_OPENAI_KEY;
+
 const Main = () => {
-    const api_key = import.meta.env.VITE_OPENAI_KEY;
 
     const [prompt, setPrompt] = useState("Plastic Water Bottle, Smartphone, Headphones, BMW Car");
     const [answer, setAnswer] = useState("No answer yet...");
@@ -22,7 +23,7 @@ const Main = () => {
                     "messages": [{ "role": "assistant", "content": "I have the following items next to me, what can I do with these items to limit their harm to the environment, and what substitutes can I get for these items that are less harmful to the environment? Make the list for each item look nice and indent properly. The items are: " + prompt }]
                 })
             }).then(response => {
-                return response.json(import.meta.env.REACT_APP_OPENAI_KEY);
+                return response.json();
             }).then(data => {
                 console.log(data);
                 setAnswer(data["choices"][0]["message"].content);

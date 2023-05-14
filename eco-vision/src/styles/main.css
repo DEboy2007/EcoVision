@@ -107,4 +107,46 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  @media screen and (max-width: 768px) {
+    body {
+      display: block;
+    }
+  
+    .file {
+      width: 90%;
+      height: 3em;
+      margin-bottom: 2em;
+    }
+  
+    .file span {
+      font-size: 20px;
+    }
+  
+    .file button {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  
+    .file button::before {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  
+    textarea {
+      height: 30vh;
+      width: 80%;
+      font-size: 1.2rem;
+    }
+  
+    .textarea1 {
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+  
+    .textarea2 {
+      margin-left: 0;
+    }
+  }
+  
   
