@@ -5,8 +5,6 @@ import { useState } from 'react';
 const api_key = import.meta.env.VITE_OPENAI_KEY;
 
 
-// Display image once uploaded
-
 const Main = () => {
 
     const [prompt, setPrompt] = useState("Plastic Water Bottle, Smartphone, Headphones, BMW Car");
