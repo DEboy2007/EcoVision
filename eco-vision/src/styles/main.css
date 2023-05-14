@@ -18,6 +18,15 @@ body {
     margin: 0;
     text-align: center;
   }
+
+  p {
+    width: 748px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
   
   /* Style for the input file element */
   .file {
@@ -163,6 +172,10 @@ body {
   
     .textarea2 {
       margin-left: 0;
+    }
+
+    p {
+      width: 75%;
     }
   }
   
