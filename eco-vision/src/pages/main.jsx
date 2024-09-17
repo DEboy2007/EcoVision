@@ -1,15 +1,45 @@
 import React from 'react';
 import '../styles/main.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 const api_key = import.meta.env.VITE_OPENAI_KEY;
-
 
 const Main = () => {
 
     const [prompt, setPrompt] = useState("Plastic Water Bottle, Smartphone, Headphones, BMW Car");
     const [answer, setAnswer] = useState("No answer yet...");
     const [image, setImage] = useState(null);
+
+    const handleImageChange = (event) => {
+        const uploadedImage = event.target.files[0];
+        setImage(uploadedImage);
+        console.log(uploadedImage);
+        sendImage();
+    }
+
+    async function sendImage() {
+        // Get the file input element
+        let fileInput = document.getElementById("file-input");
+        // Get the File object from the file input element
+        let file = fileInput.files[0];
+        console.log(file)
+        // Create a new FormData object
+        let formData = new FormData();
+        // Append the File object to the FormData object
+        formData.append("image", file);
+        console.log(formData)
+        // Send a POST request to the Flask API
+        let response = await fetch("/objectdetection/", {
+            method: "POST",
+            body: formData,
+        });
+        // Parse the JSON response
+        let data = await response.json();
+        // Log the detected objects
+        console.log(data.result);
+    }
+
 
     async function handleGPTRequest() {
         console.log("Calling OpenAI API");
@@ -44,10 +74,6 @@ const Main = () => {
         event.preventDefault();
         setAnswer("Loading...");
         handleGPTRequest();
-    }
-
-    const handleImageChange = (event) => {
-        setImage(event.target.files[0]);
     }
 
     const formRef = React.createRef();
